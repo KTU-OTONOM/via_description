@@ -188,8 +188,8 @@
 
   <xacro:include filename="ray.xacro" />
   <xacro:include filename="camera.xacro" />
-  <!-- <xacro:include filename="imu.xacro" /> -->
-  <!-- <xacro:include filename="gps.xacro" /> -->
-
+  <xacro:include filename="imu.xacro" />
+  <xacro:include filename="gps.xacro" />
+  <xacro:include filename="distance.xacro" />
 
 </robot>

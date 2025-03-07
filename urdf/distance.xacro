@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="distance_z_offset" value="0.2" />
+
+    <xacro:property name="distance_0_x" value="${base_length/2}" />
+    <xacro:property name="distance_0_y" value="${base_width/4}" />
+    <xacro:property name="distance_0_r" value="${pi/8}" />
+
+    <xacro:property name="distance_1_x" value="${base_length/2}" />
+    <xacro:property name="distance_1_y" value="-${base_width/4}" />
+    <xacro:property name="distance_1_r" value="-${pi/8}" />
+
+    <xacro:property name="distance_2_x" value="0.0" />
+    <xacro:property name="distance_2_y" value="-${7*base_width/16}" />
+    <xacro:property name="distance_2_r" value="-${pi/2}" />
+
+    <xacro:property name="distance_3_x" value="0.0" />
+    <xacro:property name="distance_3_y" value="${7*base_width/16}" />
+    <xacro:property name="distance_3_r" value="${pi/2}" />
+
+    <xacro:property name="distance_4_x" value="-${15*base_length/32}" />
+    <xacro:property name="distance_4_y" value="${base_width/8}" />
+    <xacro:property name="distance_4_r" value="${pi}" />
+
+    <xacro:property name="distance_5_x" value="-${15*base_length/32}" />
+    <xacro:property name="distance_5_y" value="-${base_width/8}" />
+    <xacro:property name="distance_5_r" value="${pi}" />
+
+    <link name='distance_0'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_0_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_0" />
+        <origin xyz="${distance_0_x} ${distance_0_y} ${distance_z_offset}" rpy="0 0 ${distance_0_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <link name='distance_1'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_1_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_1" />
+        <origin xyz="${distance_1_x} ${distance_1_y} ${distance_z_offset}" rpy="0 0 ${distance_1_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <link name='distance_2'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_2_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_2" />
+        <origin xyz="${distance_2_x} ${distance_2_y} ${distance_z_offset}" rpy="0 0 ${distance_2_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <link name='distance_3'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_3_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_3" />
+        <origin xyz="${distance_3_x} ${distance_3_y} ${distance_z_offset}" rpy="0 0 ${distance_3_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <link name='distance_4'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_4_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_4" />
+        <origin xyz="${distance_4_x} ${distance_4_y} ${distance_z_offset}" rpy="0 0 ${distance_4_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+    <link name='distance_5'>
+        <visual name='visual'>
+            <origin xyz="0 0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.1 0.05" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="distance_5_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="distance_5" />
+        <origin xyz="${distance_5_x} ${distance_5_y} ${distance_z_offset}" rpy="0 0 ${distance_5_r}" />
+        <axis xyz="0 0 0" />
+    </joint>
+
+</robot>
