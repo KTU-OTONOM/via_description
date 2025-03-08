@@ -191,11 +191,11 @@
         <axis xyz="0 1 0" />
     </joint>
 
-  <!-- <xacro:include filename="ray.xacro" />
+  <xacro:include filename="ray.xacro" />
   <xacro:include filename="camera.xacro" />
   <xacro:include filename="imu.xacro" />
   <xacro:include filename="gps.xacro" />
-  <xacro:include filename="distance.xacro" /> -->
+  <xacro:include filename="distance.xacro" />
   <xacro:include filename="via_gazebo.xacro" />
 
 </robot>
