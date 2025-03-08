@@ -41,7 +41,7 @@
     </joint>
 
 
-    <gazebo reference="camera_link">
+    <!-- <gazebo reference="camera_link">
         <sensor name='stereo_camera' type='multicamera'>
             <always_on>1</always_on>
             <update_rate>100</update_rate>
@@ -80,6 +80,6 @@
                 <frameName>camera_link</frameName>
             </plugin>
         </sensor>
-    </gazebo>
+    </gazebo> -->
 
 </robot>

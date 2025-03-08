@@ -33,7 +33,7 @@
         <origin rpy="0 0 0" xyz="${base_length/2 + laser_radius} 0 ${laser_z_offset}" />
     </joint>
 
-    <gazebo reference="base_scan">
+    <!-- <gazebo reference="base_scan">
         <material>Gazebo/FlatBlack</material>
         <sensor name="head_hokuyo_sensor_0" type="ray">
             <always_on>true</always_on>
@@ -68,6 +68,6 @@
                 <frame_name>base_scan</frame_name>
             </plugin>
         </sensor>
-    </gazebo>
+    </gazebo> -->
 
 </robot>

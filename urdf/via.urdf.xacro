@@ -22,14 +22,14 @@
   <xacro:property name="wheel_length" value="0.12" />
   <xacro:property name="front_wheel_x_offset" value="0.6775" />
   <xacro:property name="rear_wheel_x_offset" value="0.82" />
-  <xacro:property name="wheel_z_offset" value="-0.1" />
+  <xacro:property name="wheel_z_offset" value="0.1" />
 
   <link name="base_link">
     <inertial>
-      <mass value="500" />
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <inertia ixx="102.03266666666667" ixy="0" ixz="0" iyy="324.0868333333333" iyz="0"
-        izz="354.3541666666667" />
+      <mass value="1500" />
+      <origin rpy="0 0 0" xyz="0 0 ${base_height/2}" />
+      <inertia ixx="1997.86" ixy="-3e-05" ixz="-1e-06" iyy="442.769" iyz="62.5206"
+        izz="2238.05" />
     </inertial>
     <visual>
       <origin rpy="0 0 1.57" xyz="0 0 ${base_height/2}" />
@@ -39,157 +39,163 @@
       <material name="Gray" />
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 ${base_height/2}" />
+      <origin rpy="0 0 1.57" xyz="0 0 ${base_height/2}" />
       <geometry>
         <mesh filename="package://via_description/meshes/via_chassis.dae" />
       </geometry>
     </collision>
   </link>
-  <!-- Fixed Joint between base_footprint and base_link -->
-  <joint name="footprint_to_base" type="fixed">
-    <parent link="base_footprint" />
-    <child link="base_link" />
-    <origin rpy="0 0 0" xyz="0 0 ${wheel_z_offset + base_radius}" />
-  </joint>
-  <link name="front_left_steer">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
-    </inertial>
-  </link>
-  <joint name="front_left_steer_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="front_left_steer" />
-    <origin rpy="0 0 0"
-      xyz="${front_wheel_x_offset} ${base_width/2 - wheel_length/2} ${-wheel_z_offset}" />
-    <axis xyz="0 0 1" />
-  </joint>
-  <link name="front_left_wheel">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <inertia ixx="0.0084125" ixy="0" ixz="0" iyy="0.0084125" iyz="0" izz="0.015625" />
-    </inertial>
-    <visual>
-      <origin rpy="1.5707963267948966 0 3.14" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-      <material name="Black" />
-    </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 3.14" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="front_left_joint" type="continuous">
-    <parent link="front_left_steer" />
-    <child link="front_left_wheel" />
-    <origin rpy="0 0 0" xyz="0 0 0" />
-    <axis xyz="0 1 0" />
-  </joint>
-  <link name="front_right_steer">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
-    </inertial>
-  </link>
-  <joint name="front_right_steer_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="front_right_steer" />
-    <origin rpy="0 0 0"
-      xyz="${front_wheel_x_offset} -${base_width/2 - wheel_length/2} ${-wheel_z_offset}" />
-    <axis xyz="0 0 1" />
-  </joint>
-  <link name="front_right_wheel">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <inertia ixx="0.0084125" ixy="0" ixz="0" iyy="0.0084125" iyz="0" izz="0.015625" />
-    </inertial>
-    <visual>
-      <origin rpy="1.5707963267948966 0 3.14" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-      <material name="Black" />
-    </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 3.14" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="front_right_joint" type="continuous">
-    <parent link="front_right_steer" />
-    <child link="front_right_wheel" />
-    <origin rpy="0 0 0" xyz="0 0 0" />
-    <axis xyz="0 1 0" />
-  </joint>
-  <link name="rear_left_wheel">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <inertia ixx="0.0084125" ixy="0" ixz="0" iyy="0.0084125" iyz="0" izz="0.015625" />
-    </inertial>
-    <visual>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-      <material name="Black" />
-    </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="rear_left_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="rear_left_wheel" />
-    <origin rpy="0 0 0"
-      xyz="-${rear_wheel_x_offset} ${base_width/2 - wheel_length/2} ${-wheel_z_offset}" />
-    <axis xyz="0 1 0" />
-  </joint>
-  <link name="rear_right_wheel">
-    <inertial>
-      <mass value="0.5" />
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <inertia ixx="0.0084125" ixy="0" ixz="0" iyy="0.0084125" iyz="0" izz="0.015625" />
-    </inertial>
-    <visual>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-      <material name="Black" />
-    </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="package://via_description/meshes/tire.dae" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="rear_right_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="rear_right_wheel" />
-    <origin rpy="0 0 0"
-      xyz="-${rear_wheel_x_offset} -${base_width/2 - wheel_length/2} ${-wheel_z_offset}" />
-    <axis xyz="0 1 0" />
-  </joint>
 
-  <xacro:include filename="ray.xacro" />
+    <link name="rear_right_axle">
+        <visual>
+            <geometry>
+                <mesh filename="package://via_description/meshes/tire.dae" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </visual>
+        <xacro:cylinder_inertia m="30" r="${base_radius*2}" l="${wheel_length}"
+            xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <geometry>
+                <cylinder radius="${base_radius}" length="${wheel_length}" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
+    </link>
+
+    <link name="rear_left_axle">
+        <visual>
+            <geometry>
+                <mesh filename="package://via_description/meshes/tire.dae" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </visual>
+        <xacro:cylinder_inertia m="30" r="${base_radius*2}" l="${wheel_length}"
+            xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <geometry>
+                <cylinder radius="${base_radius}" length="${wheel_length}" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
+    </link>
+
+    <link name="front_right_steer">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.003381 1.5929e-07 0.02162" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+    </link>
+
+    <link name="front_right_axle">
+        <visual>
+            <geometry>
+                <mesh filename="package://via_description/meshes/tire.dae" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </visual>
+        <xacro:cylinder_inertia m="30" r="${base_radius*2}" l="${wheel_length}"
+            xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <geometry>
+                <cylinder radius="${base_radius}" length="${wheel_length}" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
+    </link>
+
+    <link name="front_left_steer">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.003381 1.5929e-07 0.02162" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+    </link>
+
+    <link name="front_left_axle">
+        <visual>
+            <geometry>
+                <mesh filename="package://via_description/meshes/tire.dae" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </visual>
+
+        <xacro:cylinder_inertia m="30" r="${base_radius*2}" l="${wheel_length}"
+            xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+
+        <collision>
+            <geometry>
+                <cylinder radius="${base_radius}" length="${wheel_length}" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 ${base_radius-wheel_z_offset}" rpy="0 0 0" />
+    </joint>
+
+    <joint name="rear_right_axle_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rear_right_axle" />
+        <origin
+            xyz="${-rear_wheel_x_offset} ${-(base_width / 2.0) + (wheel_length / 2.0)} ${wheel_z_offset}"
+            rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="rear_left_axle_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="rear_left_axle" />
+        <origin
+            xyz="${-rear_wheel_x_offset} ${(base_width / 2.0) - (wheel_length / 2.0)} ${wheel_z_offset}"
+            rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="front_right_steer_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="front_right_steer" />
+        <origin
+            xyz="${front_wheel_x_offset} ${-(base_width / 2.0) + (wheel_length / 2.0)} ${wheel_z_offset}"
+            rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="front_right_axle_joint" type="continuous">
+        <parent link="front_right_steer" />
+        <child link="front_right_axle" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="front_left_steer_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="front_left_steer" />
+        <origin
+            xyz="${front_wheel_x_offset} ${(base_width / 2.0) - (wheel_length / 2.0)} ${wheel_z_offset}"
+            rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="front_left_axle_joint" type="continuous">
+        <parent link="front_left_steer" />
+        <child link="front_left_axle" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+  <!-- <xacro:include filename="ray.xacro" />
   <xacro:include filename="camera.xacro" />
   <xacro:include filename="imu.xacro" />
   <xacro:include filename="gps.xacro" />
-  <xacro:include filename="distance.xacro" />
+  <xacro:include filename="distance.xacro" /> -->
+  <xacro:include filename="via_gazebo.xacro" />
 
 </robot>
