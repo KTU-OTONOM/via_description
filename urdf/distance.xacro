@@ -201,4 +201,226 @@
         <axis xyz="0 0 0" />
     </joint>
 
+    <gazebo reference="distance_0">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_0_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_0"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_0</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_0</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="distance_1">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_1_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_1"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_1</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_1</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="distance_2">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_2_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_2"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_2</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_2</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="distance_3">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_3_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_3"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_3</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_3</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="distance_4">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_4_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_4"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_4</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_4</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="distance_5">
+        <material>Gazebo/FlatBlack</material>
+        <sensor name="distance_5_sensor" type="ray">
+            <always_on>true</always_on>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>5</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>0.1</min_angle>
+                        <max_angle>0.1</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.120000</min>
+                    <max>12.0</max>
+                    <resolution>0.010</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="distance_5"
+                filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <remapping>~/out:=/distance_5</remapping>
+                </ros>
+                <output_type>sensor_msgs/Range</output_type>
+                <frame_name>distance_5</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
 </robot>

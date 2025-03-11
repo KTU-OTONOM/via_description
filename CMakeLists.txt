@@ -24,7 +24,7 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
-set(GAZEBO_MODEL_PATH $ENV{HOME}/.gazebo/models/${PROJECT_NAME})
+set(GAZEBO_MODEL_PATH $ENV{HOME}/.gazebo/)
 
 add_custom_target(COMMAND cmake -E make_directory ${GAZEBO_MODEL_PATH})
 

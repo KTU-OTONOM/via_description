@@ -37,7 +37,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor name="head_hokuyo_sensor_0" type="ray">
             <always_on>true</always_on>
-            <visualize>true</visualize>
+            <visualize>false</visualize>
             <update_rate>100</update_rate>
             <ray>
                 <scan>
