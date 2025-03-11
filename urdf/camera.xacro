@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:property name="camera_x_offset" value="0.75" />
-    <xacro:property name="camera_z_offset" value="0.55" />
+    <xacro:property name="camera_x_offset" value="1.25" />
+    <xacro:property name="camera_z_offset" value="0.50" />
 
     <link name="camera_link">
         <inertial>
@@ -62,7 +62,7 @@
                 <ros>
                     <namespace>zed_cam</namespace>
                 </ros>
-                <frame_name>camera_link</frame_name>
+                <frame_name>camera_optical</frame_name>
             </plugin>
         </sensor>
     </gazebo>

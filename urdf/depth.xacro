@@ -23,7 +23,7 @@
                 <ros>
                     <namespace>zed_cam</namespace>
                 </ros>
-                <frame_name>camera_link</frame_name>
+                <frame_name>camera_optical</frame_name>
             </plugin>
         </sensor>
     </gazebo>

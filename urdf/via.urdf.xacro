@@ -187,6 +187,7 @@
   <xacro:include filename="imu.xacro" />
   <xacro:include filename="gps.xacro" />
   <xacro:include filename="distance.xacro" />
+  <xacro:include filename="depth.xacro" />
   <xacro:include filename="via_gazebo.xacro" />
 
 </robot>
