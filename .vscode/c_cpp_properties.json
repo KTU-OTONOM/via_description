@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/alper/ros2_ws/install/scanmatcher/include/**",
+        "/home/alper/ros2_ws/install/realtime_tools/include/**",
+        "/home/alper/ros2_ws/install/graph_based_slam/include/**",
+        "/home/alper/ros2_ws/install/ndt_omp_ros2/include/**",
+        "/home/alper/ros2_ws/install/lio_sam/include/**",
+        "/home/alper/ros2_ws/install/lidarslam_msgs/include/**",
+        "/home/alper/ros2_ws/install/direct_lidar_inertial_odometry/include/**",
+        "/home/alper/ros2_pkgs/install/ros_ign_interfaces/include/**",
+        "/home/alper/ros2_pkgs/install/ros_gz_sim/include/**",
+        "/home/alper/ros2_pkgs/install/ros_gz_bridge/include/**",
+        "/home/alper/ros2_pkgs/install/ros_gz_interfaces/include/**",
+        "/home/alper/ros2_pkgs/install/laser_filters/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
