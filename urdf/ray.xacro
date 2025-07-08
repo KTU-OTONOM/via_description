@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:property name="laser_radius" value="0.1" />
+    <xacro:property name="laser_radius" value="0.055" />
     <xacro:property name="laser_length" value="0.08" />
     <xacro:property name="laser_z_offset" value="0.2" />
 
@@ -19,12 +19,6 @@
             </geometry>
             <material name="Red" />
         </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <cylinder length="${laser_length}" radius="${laser_radius}" />
-            </geometry>
-        </collision>
     </link>
     
     <joint name="lidar_joint" type="fixed">
